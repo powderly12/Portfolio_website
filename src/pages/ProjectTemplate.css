@@ -1,0 +1,72 @@
+/* ProjectTemplate.css - Vibrant Color Scheme */
+
+:root {
+    --primary-bg-color: #1A1A1A;       /* Dark Gray/Black */
+    --secondary-bg-color: #2E2E2E;     /* Slightly Lighter Gray */
+    --text-color: #EDEDED;             /* Off-white for readability */
+    --accent-color: #00FFFF;           /* Cyan for vibrant contrast */
+    --heading-color: #FF00FF;          /* Magenta for added vibrancy */
+    --section-heading-color: #FFD700;  /* Bright Yellow-Gold for section headings */
+  }
+  
+  .project-template-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--accent-color); /* Cyan accent for title */
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-description,
+  .design-approach {
+    background-color: var(--secondary-bg-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-description p,
+  .design-approach p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+  
+  .project-image-container,
+  .project-media-container {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .project-image,
+  .project-media {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .design-approach h2 {
+    font-size: 1.8rem;
+    color: var(--section-heading-color); /* Bright Yellow-Gold for section heading */
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-title,
+  .design-approach h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
