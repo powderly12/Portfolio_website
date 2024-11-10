@@ -1,42 +1,42 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
 
+
+
 function Home() {
   return (
     <div className="home-container">
-      <header className="hero-section">
+      {/* Sky Section */}
+      <section className="sky-section">
         <h1>Welcome to My Design Portfolio</h1>
-        <p>Discover my projects and design journey below!</p>
-      </header>
-      <section className="projects-grid">
-        <Link to="/project1" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 1" className="project-image" />
-          <span>Project 1</span>
-        </Link>
-        <Link to="/project2" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 2" className="project-image" />
-          <span>Project 2</span>
-        </Link>
-        <Link to="/project3" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 3" className="project-image" />
-          <span>Project 3</span>
-        </Link>
-        <Link to="/project4" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 4" className="project-image" />
-          <span>Project 4</span>
-        </Link>
-        <Link to="/project5" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 5" className="project-image" />
-          <span>Project 5</span>
-        </Link>
-        <Link to="/project6" className="project-button">
-          <img src="src\assets\imgs\image.png" alt="Project 6" className="project-image" />
-          <span>Project 6</span>
-        </Link>
+        <p>This is where creativity meets functionality. Explore my projects below!</p>
+      </section>
+
+      {/* Meadow Section */}
+      <section className="meadow-section">
+        <div className="flower-links">
+          <Link to="/project1" className="flower-link">Project 1</Link>
+          <Link to="/project2" className="flower-link">Project 2</Link>
+          <Link to="/project3" className="flower-link">Project 3</Link>
+          <Link to="/project4" className="flower-link">Project 4</Link>
+          <Link to="/project5" className="flower-link">Project 5</Link>
+          <Link to="/project6" className="flower-link">Project 6</Link>
+        </div>
+      </section>
+
+      {/* Roots Section */}
+      <section className="roots-section">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate designer with a background in crafting user-centered
+          solutions. My roots in design are deeply connected to my love for art and functionality.
+        </p>
       </section>
     </div>
   );
 }
 
 export default Home;
+
+
 

@@ -1,63 +1,159 @@
 /* Home.css */
 
+/* Overall Container */
 .home-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
     font-family: Arial, sans-serif;
-  }
-  
-  .hero-section {
-    margin-bottom: 2rem;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
     color: #333;
   }
   
-  .hero-section p {
-    font-size: 1.2rem;
-    color: #666;
-  }
   
-  /* Style for the 2x3 project grid */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .project-button {
+  .sky-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    padding: 1rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    height: 30vh;
+    padding: 2rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+  
+    /* Background gradient and image */
+    background: linear-gradient(to bottom, rgba(135, 206, 235, 0.8), rgba(176, 226, 255, 0.8)),
+                url('../assets/sky-background.jpg');
+    background-size: 200% 200%; /* Makes the image twice as wide as the viewport */
+    background-repeat: no-repeat;
+    background-position: 0% center;
+    animation: moveClouds 120s linear infinite;
   }
   
-  .project-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  @keyframes moveClouds {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: 100% center;
+    }
   }
   
-  .project-image {
+  
+  
+  .sky-section h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem;
+  }
+  
+  .sky-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  /* Curved Divider */
+
+.sky-section::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
     width: 100%;
-    height: 150px; /* Set a fixed height for uniformity */
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 0.5rem;
+    height: 12vw; /* Height scales with viewport width */
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"%3E%3Cpath fill="%23A3D977" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,250.7C960,256,1200,224,1320,208L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"%3E%3C/path%3E%3C/svg%3E') no-repeat;
+    background-size: contain; /* Keeps aspect ratio */
+    background-position: bottom;
   }
   
-  .project-button span {
+  
+  
+  /* Meadow Section with Enhanced Background and Flower Styles */
+.meadow-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: linear-gradient(to bottom, #a3d977, rgba(255, 255, 255, 0)), url('../assets/grass.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+  }
+  
+  
+  .flower-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Enhanced Flower Styling */
+  .flower-link {
+    width: 90px;
+    height: 90px;
+    background-color: #FFB6C1; /* Softer pink for flower petals */
+    color: #333333;
+    text-decoration: none;
+    text-align: center;
     font-weight: bold;
-    font-size: 1.1rem;
-    color: #333;
+    line-height: 90px;
+    border-radius: 50%;
+    border: 2px solid #FF69B4; /* Border for more flower-like effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adds a natural shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .flower-link:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Curved, Root-Like SVG Divider */
+.meadow-section::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%235A3313" d="M0,256L80,213.3C160,171,320,85,480,58.7C640,32,800,64,960,85.3C1120,107,1280,117,1360,122.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"%3E%3C/path%3E%3C/svg%3E');
+    background-size: cover;
+    opacity: 0.8; /* Adjust for a softer blend */
+  }
+  
+
+  /* Roots Section */
+  .roots-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    padding: 2rem;
+    text-align: center;
+    color: #EDEDED;
+    font-family: Arial, sans-serif;
+  
+    /* Background gradient and image */
+    background: linear-gradient(to bottom, rgba(139, 69, 19, 0.8), rgba(90, 51, 19, 0.8)), 
+                url('../assets/roots-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+  
+  .roots-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .roots-section p {
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
   }
   
