@@ -202,87 +202,85 @@
     z-index: 2;
     pointer-events: none;
   }
-  /*New sjit*/
-  /* Flower Link Styling */
-/* Container for the Flower Links in a 2x3 Grid Layout */
-.flower-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    grid-template-rows: repeat(2, auto); /* Two rows */
-    gap: 2.5rem;
-    justify-content: center;
-    max-width: 400px; /* Center align the grid */
-    margin: 0 auto;
-  }
-  
-  .flower-link {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Default closed flower state */
-  .flower-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('src/assets/closed-flower.png'); /* Closed flower image */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.3s ease;
-  }
-  
-  /* Open flower state on hover */
-  .flower-link:hover .flower-img {
-    background-image: url('src/assets/open-flower.png'); /* Open flower image */
-  }
-  
-  /* Text styling within the flower */
-.flower-link span {
-  position: absolute;
-  opacity: 0;
-  color: #333; /* Default color */
-  font-weight: bold;
-  text-align: center;
-  transition: opacity 0.3s;
-  padding: 0.2rem 0.4rem; /* Add padding around text */
-  background-color: rgba(255, 255, 0, 0.4); /* Semi-transparent yellow background */
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for better contrast */
+ 
+
+/* Container for panels in a 3x2 grid */
+.project-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 35%); /* Three columns */
+  grid-template-rows: auto;
+  column-gap: 4rem; /* Adds space between columns only */
+  row-gap: 1rem; /* Optional: Adjusts spacing between rows */
+  max-width: 400px; /* Adjust as needed */
+  min-width: 300;
+  margin: 0 auto;
+  padding: 2rem;
+  z-index: 4;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Allows the container to expand */
+  height: auto; /* Optional: Let it grow vertically */
 }
 
-/* Show text on hover */
-.flower-link:hover span {
-  opacity: 1; /* Show the text */
-  color: #333; /* Ensures contrast */
+
+
+
+
+/* Project panel style for square shape */
+.project-panel {
+  position: relative;
+  overflow: hidden;
+  background-color: #5574179b;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width of grid cell */
+  aspect-ratio: 1; /* Makes the panel a square */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
 }
-  
-  /* Scaling the hovered flower and shifting nearby flowers */
-  .flower-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    grid-gap: 2rem;
-    justify-content: center;
-    margin: 0 auto;
-  }
-  
-  /* Scale the hovered flower and apply an effect to adjacent ones */
-  .flower-link:hover {
-    transform: scale(1.2); /* Enlarge the hovered flower */
-    z-index: 10; /* Bring it to the front */
-  }
-  
-  /* Shift neighboring flowers slightly when hovering */
-  .flower-link:hover ~ .flower-link {
-    transform: translateX(10px); /* Shift nearby flowers */
-  }
-  
-  
+
+/* Text displayed by default */
+.project-panel span {
+  font-size: 1rem;
+  font-weight: bold;
+  position:center;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  color: #eee8e8;
+  padding: 0.5rem;
+  text-align: center; /* Center text if it wraps */
+}
+
+/* Image inside the panel */
+.panel-image {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  object-fit: scale-down;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+/* Hover effect to reveal the image */
+.project-panel:hover .panel-image {
+  opacity: 1;
+}
+
+.project-panel:hover span {
+  opacity: 0;
+}
+
+.project-panel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
   /* Roots Section */
   .roots-section {
