@@ -6,33 +6,41 @@
     color: #333;
   }
  
+
+  a {
+    color: #EDEDED;
+    text-decoration: underline; 
+}
  /* Sun Styling with Image and Yellow Overlay */
-.sun {
+
+/* Two-Column Layout for the List */
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 0.2rem; /* Space between items */
+  list-style-type: none; /* Standard bullet points */
+  padding-left: 0rem; /* Indentation for bullets */
+}
+
+.two-column-list li {
+  margin-bottom: 0.2rem; /* Space between items vertically */
+}
+  
+/* Project Image Inside Flower Link */
+
+.sun-img {
     position: absolute;
     top: 10%;
     left: 0%;
-    width: 75px;
-    height: 75px;
-    background: url('src/assets/sun.jpg') no-repeat center center; /* Background image for the sun */
-    background-size: cover; /* Ensure the image covers the entire circle */
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ensure the image covers the entire circle */
     border-radius: 50%; /* Keeps it circular */
     z-index: 3;
     animation: sunArc 30s linear infinite; /* 30-second animation that repeats infinitely */
     overflow: hidden; /* Ensures overlay stays within bounds */
   }
   
-  /* Sun Yellow Overlay */
-  .sun-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 215, 0, 0.8); /* Semi-transparent yellow color */
-    border-radius: 50%; /* Keeps it circular */
-    box-shadow: 0 0 20px rgba(255, 215, 0, 1); /* Glow effect */
-    z-index: 2; /* Places the overlay above the image */
-  }
   
   /* Sun Arc Animation */
   @keyframes sunArc {
@@ -41,15 +49,25 @@
       left: 10%;
       transform: translate(-50%, 0) rotate(0deg);
     }
+    25% {
+      top: 35%;
+      left: 30%;
+      
+    }
     50% {
       top: 20%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(180deg);
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    75% {
+      top: 35%;
+      left: 70%;
+      transform: translate(-50%, 0) rotate(0deg);
     }
     100% {
       top: 100%;
       left: 90%;
-      transform: translate(-50%, 0) rotate(360deg);
+      transform: translate(-50%, 0) rotate(0deg);
     }
   }
   
@@ -197,61 +215,73 @@
     margin: 0 auto;
   }
   
-  /* Flower Link Styling */
   .flower-link {
+    position: relative;
     width: 120px;
     height: 120px;
-    background-color: #FFB6C1;
-    color: #333;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    line-height: 20px;
     border-radius: 50%;
-    border: 2px solid #FF69B4;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s, width 0.3s, height 0.3s;
-    position: relative;
     overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  /* Text Inside Flower Link */
-  .flower-link span {
-    z-index: 2;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Project Image Inside Flower Link */
-  .flower-link img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  /* Default closed flower state */
+  .flower-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background-image: url('src/assets/closed-flower.png'); /* Closed flower image */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
   }
   
-  /* Hover Effect */
+  /* Open flower state on hover */
+  .flower-link:hover .flower-img {
+    background-image: url('src/assets/open-flower.png'); /* Open flower image */
+  }
+  
+  /* Text styling within the flower */
+.flower-link span {
+  position: absolute;
+  opacity: 0;
+  color: #333; /* Default color */
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.3s;
+  padding: 0.2rem 0.4rem; /* Add padding around text */
+  background-color: rgba(255, 255, 0, 0.4); /* Semi-transparent yellow background */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for better contrast */
+}
+
+/* Show text on hover */
+.flower-link:hover span {
+  opacity: 1; /* Show the text */
+  color: #333; /* Ensures contrast */
+}
+  
+  /* Scaling the hovered flower and shifting nearby flowers */
+  .flower-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  /* Scale the hovered flower and apply an effect to adjacent ones */
   .flower-link:hover {
-    width: 150px;
-    height: 150px;
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.2); /* Enlarge the hovered flower */
+    z-index: 10; /* Bring it to the front */
   }
   
-  .flower-link:hover span {
-    opacity: 0; /* Hide the text */
+  /* Shift neighboring flowers slightly when hovering */
+  .flower-link:hover ~ .flower-link {
+    transform: translateX(10px); /* Shift nearby flowers */
   }
   
-  .flower-link:hover img {
-    opacity: 1; /* Show the image */
-  }
   
 
   /* Roots Section */
@@ -261,7 +291,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 125vh;
     padding: 2rem;
     text-align: center;
     color: #EDEDED;
@@ -290,4 +320,6 @@
     font-size: 1rem;
     line-height: 1.6;
   }
+
+  
   
