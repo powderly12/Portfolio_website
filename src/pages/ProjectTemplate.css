@@ -1,72 +1,169 @@
-/* ProjectTemplate.css - Vibrant Color Scheme */
-
-:root {
-    --primary-bg-color: #1A1A1A;       /* Dark Gray/Black */
-    --secondary-bg-color: #2E2E2E;     /* Slightly Lighter Gray */
-    --text-color: #EDEDED;             /* Off-white for readability */
-    --accent-color: #00FFFF;           /* Cyan for vibrant contrast */
-    --heading-color: #FF00FF;          /* Magenta for added vibrancy */
-    --section-heading-color: #FFD700;  /* Bright Yellow-Gold for section headings */
-  }
-  
-  .project-template-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+/* Overall Container */
+.project-container {
     font-family: Arial, sans-serif;
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-  }
-  
-  .project-title {
+    color: #2f4f4f; /* Dark greenish gray for text */
+    padding: 2rem;
+    background-color: #f0f4e3; /* Soft, earthy green background */
+}
+
+/* Project Title */
+.project-title {
     font-size: 2.5rem;
+    color: #3a5a40; /* Deep forest green */
+    margin-bottom: 1rem;
     text-align: center;
-    color: var(--accent-color); /* Cyan accent for title */
-    margin-bottom: 1.5rem;
-  }
-  
-  .project-description,
-  .design-approach {
-    background-color: var(--secondary-bg-color);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-description p,
-  .design-approach p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-  }
-  
-  .project-image-container,
-  .project-media-container {
+}
+
+/* Introductory Text */
+.project-intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
     text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .project-image,
-  .project-media {
-    width: 100%;
-    max-width: 600px;
+    margin: 0 auto;
+    color: #556b2f; /* Olive green */
+}
+
+/* Media Section - General */
+.project-media {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-media-item {
+    position: relative;
+    overflow: hidden;
+    width: 48%; /* Adjust for side-by-side layout */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  }
-  
-  .design-approach h2 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-media-item:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
+}
+
+.video-item .react-player {
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+/* Layout: Two Images Side by Side */
+.project-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Layout: Single Image Below Design Approach */
+.single-image-below {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.single-image-below .project-image {
+    width: 80%; /* Adjust width as needed */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout: Three Images (One Below) */
+.project-images.three-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project-images.three-images .project-media-item {
+    width: 48%; /* Adjust width for top two images */
+}
+
+/* Design Approach Section */
+.project-description {
+    background-color: #d9e4dd; /* Very light earthy green */
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    color: #3a5a40; /* Deep forest green */
+}
+
+.project-description h2 {
     font-size: 1.8rem;
-    color: var(--section-heading-color); /* Bright Yellow-Gold for section heading */
-    text-align: center;
     margin-bottom: 0.5rem;
-  }
-  
-  .project-title,
-  .design-approach h2 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
+    color: #556b2f; /* Olive green */
+}
+
+/* Layout: Video with Text Beside */
+.project-video-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-video-text .video-wrapper {
+    flex: 2;
+}
+
+.project-video-text .video-text {
+    flex: 1;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Buttons */
+.project-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    padding: 0.5rem 1rem;
+    background-color: #3a5a40; /* Deep forest green */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #556b2f; /* Olive green hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-images {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .project-media-item {
+        width: 100%;
+    }
+
+    .project-description {
+        text-align: center;
+    }
+
+    .project-navigation {
+        flex-direction: column;
+    }
+}
