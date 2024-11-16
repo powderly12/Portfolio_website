@@ -14,7 +14,7 @@ function Home() {
 
       {/* Meadow Section */}
       <section className="meadow-section">
-        <img src="src/assets/boys.png" alt="Decorative Overlay" className="meadow-overlay-boys" />
+        <img src={'../assets/boys.png'} alt="Decorative Overlay" className="meadow-overlay-boys" />
         
         {/* Project Panels */}
         <div className="project-panels">
