@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "2627b744-30b3-4157-bf34-552b8253049b"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2627b744-30b3-4157-bf34-552b8253049b"
+    },
+    "android": {
+      "package": "com.powderly12.profoliowebsite"
+    },
+    "ios": {}
+  }
+}
