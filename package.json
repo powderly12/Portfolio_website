@@ -3,7 +3,8 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://powderly12.github.io/Portfolio_website",
+    "homepage": "https://powderly12.github.io/Portfolio_website/",
+    
     "scripts": {
       "start": "vite",
       "build": "vite build",

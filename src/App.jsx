@@ -11,7 +11,6 @@ import Project6 from './pages/Project6.jsx';
 
 function App() {
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project1" element={<Project1 />} />
@@ -21,7 +20,6 @@ function App() {
         <Route path="/project5" element={<Project5 />} />
         <Route path="/project6" element={<Project6 />} />
       </Routes>
-    </Router>
   );
 }
 
