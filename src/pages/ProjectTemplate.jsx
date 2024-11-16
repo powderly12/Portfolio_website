@@ -1,33 +1,128 @@
-import { useParams } from 'react-router-dom';
 import React from 'react';
+import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 import './ProjectTemplate.css';
 
-function ProjectTemplate() {
+function ProjectTemplate({
+  title,
+  description,
+  approach,
+  mediaContent,
+  layout,
+  homePath = '/',
+  prevProjectPath,
+  nextProjectPath,
+}) {
   return (
     <div className="project-container">
-      <h1 className="project-title">Project Title</h1>
-      <p className="project-intro">
-        This is an introductory section for the project, briefly describing its concept and purpose.
-      </p>
-      
-      <div className="project-images">
-        <img src="path/to/first-image.jpg" alt="Project Visual 1" className="project-image project-image-left" />
-        <img src="path/to/second-image.jpg" alt="Project Visual 2" className="project-image project-image-right" />
+      <h1 className="project-title">{title}</h1>
+      <p className="project-intro">{description}</p>
+
+      {/* Media Section */}
+      <div className="project-media">
+        {layout === 'single-image' && mediaContent.length === 1 && (
+          <div className="project-media-item">
+            <img
+              src={mediaContent[0].src}
+              alt={mediaContent[0].alt || 'Project Image'}
+              className="project-image"
+            />
+          </div>
+        )}
+
+        {layout === 'two-images' && mediaContent.length === 2 && (
+          <div className="project-images">
+            {mediaContent.map((media, index) => (
+              <div key={index} className="project-media-item">
+                <img
+                  src={media.src}
+                  alt={media.alt || `Project Image ${index + 1}`}
+                  className="project-image"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {layout === 'three-images' && mediaContent.length === 3 && (
+          <>
+            <div className="project-images">
+              {mediaContent.slice(0, 2).map((media, index) => (
+                <div key={index} className="project-media-item">
+                  <img
+                    src={media.src}
+                    alt={media.alt || `Project Image ${index + 1}`}
+                    className="project-image"
+                  />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {layout === 'image-video' && mediaContent.length === 2 && (
+          <div className="project-images">
+            {mediaContent.map((media, index) =>
+              media.type === 'image' ? (
+                <div key={index} className="project-media-item">
+                  <img
+                    src={media.src}
+                    alt={media.alt || `Project Image ${index + 1}`}
+                    className="project-image"
+                  />
+                </div>
+              ) : (
+                <div key={index} className="project-media-item video-item">
+                  <ReactPlayer
+                    url={media.src}
+                    className="react-player"
+                    width="100%"
+                    height="100%"
+                    controls
+                  />
+                </div>
+              )
+            )}
+          </div>
+        )}
       </div>
-      
+
+      {/* Design Approach Section */}
       <div className="project-description">
         <h2>Design Approach</h2>
-        <p>
-          In this section, discuss the design approach taken in the project, including key inspirations,
-          methods, and any unique aspects of the process.
-        </p>
+        <p>{approach}</p>
       </div>
-      
-      <div className="project-summary">
-        <h2>Project Summary</h2>
-        <p>
-          A concluding statement about the project, summarizing its impact and any notable achievements.
-        </p>
+      <div className="project-media">
+        {layout === 'three-images' && mediaContent.length === 3 && (
+          <div className="project-media-item">
+
+          <div className="single-image-below">
+              <img
+                src={mediaContent[2].src}
+                alt={mediaContent[2].alt || 'Project Image 3'}
+                className="project-image"
+              />
+            </div>
+            
+        </div>
+        )} 
+        </div>
+
+      {/* Navigation Buttons */}
+      <div className="project-navigation">
+        {prevProjectPath && (
+          <Link to={prevProjectPath} className="nav-button">
+            Previous
+          </Link>
+        )}
+        <Link to={homePath} className="nav-button">
+          Home
+        </Link>
+        {nextProjectPath && (
+          <Link to={nextProjectPath} className="nav-button">
+            Next
+          </Link>
+        )}
       </div>
     </div>
   );

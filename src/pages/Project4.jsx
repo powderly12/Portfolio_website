@@ -1,15 +1,23 @@
 import ProjectTemplate from './ProjectTemplate';
 
-function Project4() {
+function Project3() {
   return (
-    <ProjectTemplate 
-      title="Project 4"
-      description="This is a description of Project 4."
-      projectImage="src/assets/imgs/test1.png"
-      approach="This section details the design approach"
-      media="src/assets/imgs/test2.jpg" // Adjust paths accordingly
+    <ProjectTemplate
+      title="Hipeac Workshop Animations"
+      description="This is a description of Project 3."
+      approach="This section details the design approach."
+  
+      layout="image-video" // Choose appropriate layout
+      mediaContent={[
+        { type: 'image', src: 'src/assets/MatrixMult-gif.gif', alt: 'Project Image' },
+        { type: 'video', src: 'https://www.youtube.com/watch?v=QKZz4HdOn7E&t=2s' }
+      ]}
+  
+      homePath="/"
+      prevProjectPath="/project3"
+      nextProjectPath="/project5"
     />
   );
 }
 
-export default Project4;
+export default Project3;

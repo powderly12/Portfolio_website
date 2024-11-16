@@ -194,7 +194,7 @@
 
   .meadow-overlay-boys {
     position: absolute;
-    left: 0px;
+    left: 0%;
     top: 53%;
     transform: translateY(-50%); /* Center vertically */
     max-width: 300px; /* Adjust the size as needed */
