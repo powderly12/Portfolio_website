@@ -1,3 +1,4 @@
+npx expo publish
 # Logs
 logs
 *.log
@@ -22,3 +23,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Logs
+*.log
+yarn-debug.log*
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+ios/Pods/
+
+# React Native
+android/app/build/
+ios/build/
+
+# Config files
+.env
+*.key
+

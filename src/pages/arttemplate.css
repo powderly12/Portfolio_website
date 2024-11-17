@@ -1,0 +1,83 @@
+/* Overall Container for Arts and Photography Page */
+.project-container {
+    font-family: Arial, sans-serif;
+    color: #2f4f4f; /* Dark greenish gray for text */
+    padding: 2rem;
+    background-color: #f0f4e3; /* Soft, earthy green background */
+}
+
+/* Title for the Page */
+.project-title {
+    font-size: 2.5rem;
+    color: #3a5a40; /* Deep forest green */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Grid for 9 Images */
+/* Responsive Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns per row */
+    gap: 1rem;
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+
+/* Individual Image Item */
+.image-grid-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #d9e4dd; /* Light greenish background for empty slots */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Image Styling: Maintain Original Aspect Ratio */
+.image-grid-item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0; /* Rounded corners on top only */
+    display: block;
+}
+
+/* Caption Styling */
+.image-caption {
+    font-size: 1rem;
+    color: #556b2f; /* Olive green for text */
+    padding: 0.5rem;
+    background-color: #f9f9f9; /* Light neutral background for caption */
+    width: 100%; /* Ensure full width */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1); /* Subtle top shadow */
+}
+
+/* Hover Effect */
+.image-grid-item:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Return to Home Button */
+.return-home-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: #3a5a40; /* Deep forest green */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.return-home-button:hover {
+    background-color: #556b2f; /* Olive green hover */
+}
