@@ -8,43 +8,43 @@ function Home() {
       <section className="sky-section">
         <h1>Welcome to My Design Portfolio</h1>
         <p>This is where creativity meets functionality. Explore my projects below!</p>
-        <img src="src/assets/sun.png" alt="Decorative Overlay" className="sun-img" />
-        <img src="src/assets/trees.png" alt="Decorative Overlay" className="tree-overlay" />
+        <img src={`${import.meta.env.BASE_URL}assets/sun.png`} alt="Decorative Overlay" className="sun-img" />
+        <img src={`${import.meta.env.BASE_URL}assets/trees.png`} alt="Decorative Overlay" className="tree-overlay" />
       </section>
 
       {/* Meadow Section */}
       <section className="meadow-section">
-        <img src={'../assets/boys.png'} alt="Decorative Overlay" className="meadow-overlay-boys" />
+        <img  src={`${import.meta.env.BASE_URL}assets/boys.png`} alt="Decorative Overlay" className="meadow-overlay-boys" />
         
         {/* Project Panels */}
         <div className="project-panels">
           <Link to="/project1" className="project-panel">
             <span>Self Sorting Trash Bin</span>
-            <img src="src/assets/project1.png" alt="Project 1" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project1.png`} alt="Project 1" className="panel-image" />
           </Link>
           <Link to="/project2" className="project-panel">
             <span>Non-Invasive Glucose Monitoring</span>
-            <img src="src/assets/project2.png" alt="Project 2" className="panel-image" />
+            <img src={`${import.meta.env.BASE}assets/project2.png`} alt="Project 2" className="panel-image" />
           </Link>
           <Link to="/project3" className="project-panel">
             <span>COVID 19 Meeting Pod</span>
-            <img src="src/assets/project3.png" alt="Project 3" className="panel-image" />
+            <img src={`${import.meta.env.BASE}assets/project3.png`} alt="Project 3" className="panel-image" />
           </Link>
           <Link to="/project4" className="project-panel">
             <span> AI Engine Animations</span>
-            <img src="src/assets/project5.png" alt="Project 4" className="panel-image" />
+            <img src={`${import.meta.env.BASE}assets/project4.png`} alt="Project 4" className="panel-image" />
           </Link>
           <Link to="/project5" className="project-panel">
             <span>Drone Light Painter</span>
-            <img src="src\assets\project4.png" alt="Project 5" className="panel-image" />
+            <img src='assets/project5.png' alt="Project 5" className="panel-image" />
           </Link>
           <Link to="/project6" className="project-panel">
             <span>Sustainable Navigation App</span>
-            <img src="src/assets/project6.png" alt="Project 6" className="panel-image" />
+            <img src='assets/project6.png' alt="Project 6" className="panel-image" />
           </Link>
         </div>
         
-        <img src="src/assets/cow.png" alt="Decorative Overlay" className="meadow-overlay" />
+        <img src={`${import.meta.env.BASE}assets/cow.png"`} alt="Decorative Overlay" className="meadow-overlay" />
       </section>
 
       {/* Roots Section */}
