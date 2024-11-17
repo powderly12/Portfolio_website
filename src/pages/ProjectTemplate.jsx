@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import './ProjectTemplate.css';
 
-function ProjectTemplate({
+const ProjectTemplate = ({
   title,
   description,
   approach,
@@ -12,7 +12,12 @@ function ProjectTemplate({
   homePath = '/',
   prevProjectPath,
   nextProjectPath,
-}) {
+}) => {
+  useEffect(() => {
+    // Scroll to the top when the component is loaded
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-container">
       <h1 className="project-title">{title}</h1>
@@ -57,6 +62,13 @@ function ProjectTemplate({
                 </div>
               ))}
             </div>
+            <div className="single-image-below">
+              <img
+                src={mediaContent[2].src}
+                alt={mediaContent[2].alt || 'Project Image 3'}
+                className="project-image"
+              />
+            </div>
           </>
         )}
 
@@ -92,21 +104,6 @@ function ProjectTemplate({
         <h2>Design Approach</h2>
         <p>{approach}</p>
       </div>
-      <div className="project-media">
-        {layout === 'three-images' && mediaContent.length === 3 && (
-          <div className="project-media-item">
-
-          <div className="single-image-below">
-              <img
-                src={mediaContent[2].src}
-                alt={mediaContent[2].alt || 'Project Image 3'}
-                className="project-image"
-              />
-            </div>
-            
-        </div>
-        )} 
-        </div>
 
       {/* Navigation Buttons */}
       <div className="project-navigation">
@@ -126,6 +123,6 @@ function ProjectTemplate({
       </div>
     </div>
   );
-}
+};
 
 export default ProjectTemplate;

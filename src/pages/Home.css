@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 50vh;
     padding: 2rem;
     text-align: center;
     color: #FFFFFF;
@@ -129,26 +129,6 @@
     z-index: 5;
     pointer-events: none;
 }
-
-
-
-  /* Curved Divider 
-
-.sky-section::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    z-index: 3;
-    left: 0;
-    width: 100%;
-    height: 12vw; 
-    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"%3E%3Cpath fill="%2387b824" fill-opacity="1" d="M0,160L120,181.3C240,203,480,245,720,250.7C960,256,1200,224,1320,208L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"%3E%3C/path%3E%3C/svg%3E') no-repeat;
-    background-size: contain; 
-    background-position: bottom;
-  }*/
-  
-  
   
 
 /* Meadow Section with Flex Layout */
@@ -180,28 +160,76 @@
   }
   
   /* Right-Aligned Overlay Image */
-  .meadow-overlay {
-    position: absolute;
-    right: 50px; /* Adjust this to position image from the right edge */
-    top: 80px;
-    transform: translateY(-50%); /* Center vertically */
-    max-width: 150px; /* Adjust the size as needed */
-    height: auto;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
+.cow-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem; /* Add spacing if needed */
+  position: absolute;
+  right: 50px; /* Adjust this to position image from the right edge */
+  top: 80px;
+  transform: translateY(-50%); /* Center vertically */
+  max-width: 150px; /* Adjust the size as needed */
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Cow button container */
+.cow-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px; /* Optional: rounded corners */
+  cursor: pointer;
+}
+
+/* Cow image styling */
+.meadow-overlay-cow {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Message overlay that appears on hover */
+.cow-hover-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+  z-index: 2; /* Ensure it appears above the cow */
+}
+
+/* Cow fade effect and hover message visibility */
+.cow-container:hover .meadow-overlay-cow {
+  opacity: 0.7; /* Make the cow slightly transparent */
+}
+
+.cow-container:hover .cow-hover-message {
+  opacity: 1; /* Make the message visible */
+}
+
+
 
   .meadow-overlay-boys {
     position: absolute;
-    left: 0%;
-    top: 53%;
-    transform: translateY(-50%); /* Center vertically */
-    max-width: 300px; /* Adjust the size as needed */
-    height: auto;
+    bottom: 0; /* Pins the image to the bottom */
+    left: 0; /* Pins the image to the left */
+    width: 15vw; /* Scales dynamically based on viewport width */
+    max-width: 300px; /* Prevents the image from getting too large */
+    min-width: 260px; /* Ensures the image doesn't shrink too much */
+    height: auto; /* Maintains aspect ratio */
     z-index: 2;
     pointer-events: none;
-  }
+}
+
  
 
 /* Container for panels in a 3x2 grid */
@@ -289,11 +317,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 125vh;
     padding: 2rem;
     text-align: center;
     color: #EDEDED;
     font-family: Arial, sans-serif;
+    
     
     /* Background gradient and image */
     background: linear-gradient(to bottom, rgba(139, 69, 19, 0.8), rgba(90, 51, 19, 0.8)), 
@@ -305,6 +333,10 @@
     /* Create overlap effect */
     margin-top: -20px; /* Moves the roots section up slightly under the meadow */
     z-index: 1; /* Ensure it's positioned beneath meadow and sky */
+    min-height: 100vh; /* Ensures initial section height covers the viewport */
+    height: auto; /* Allows the section to grow with content */
+    overflow: visible; /* Ensures content isn't clipped */
+
 }
 
   
@@ -319,5 +351,45 @@
     line-height: 1.6;
   }
 
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Space between the buttons and the image */
+    margin-top: 2rem;
+}
+
+.about-image {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+  
+}
+
+.knowledge-button,
+.connect-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #557417;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.knowledge-button:hover,
+.connect-button:hover {
+    background-color: #88a859; /* Change color on hover */
+}
+
+.knowledge-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #557417;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
   

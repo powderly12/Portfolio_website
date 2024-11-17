@@ -7,6 +7,7 @@ import Project3 from './pages/Project3.jsx';
 import Project4 from './pages/Project4.jsx';
 import Project5 from './pages/Project5.jsx';
 import Project6 from './pages/Project6.jsx';
+import ArtAndPhotography from './pages/ArtAndPhotography.jsx'; 
 // Import other project pages similarly
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/project4" element={<Project4 />} />
         <Route path="/project5" element={<Project5 />} />
         <Route path="/project6" element={<Project6 />} />
+        <Route path="/art-and-photography" element={<ArtAndPhotography />} />
       </Routes>
   );
 }
