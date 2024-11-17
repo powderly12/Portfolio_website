@@ -5,8 +5,10 @@ import './ProjectTemplate.css';
 
 const ProjectTemplate = ({
   title,
+  introduction,
   description,
   approach,
+  learnings,
   mediaContent,
   layout,
   homePath = '/',
@@ -21,7 +23,7 @@ const ProjectTemplate = ({
   return (
     <div className="project-container">
       <h1 className="project-title">{title}</h1>
-      <p className="project-intro">{description}</p>
+      <p className="project-intro">{introduction} <br/> {description}</p>
 
       {/* Media Section */}
       <div className="project-media">
@@ -62,13 +64,6 @@ const ProjectTemplate = ({
                 </div>
               ))}
             </div>
-            <div className="single-image-below">
-              <img
-                src={mediaContent[2].src}
-                alt={mediaContent[2].alt || 'Project Image 3'}
-                className="project-image"
-              />
-            </div>
           </>
         )}
 
@@ -102,14 +97,24 @@ const ProjectTemplate = ({
       {/* Design Approach Section */}
       <div className="project-description">
         <h2>Design Approach</h2>
-        <p>{approach}</p>
+        <p>{approach} <br/> {learnings}</p>
       </div>
+      {layout === 'three-images' && mediaContent.length === 3 && (
+        <div className="single-image-below">
+        <img
+          src={mediaContent[2].src}
+          alt={mediaContent[2].alt || 'Project Image 3'}
+          className="project-image"
+        />
+      </div>)
+      }
+          
 
       {/* Navigation Buttons */}
       <div className="project-navigation">
         {prevProjectPath && (
           <Link to={prevProjectPath} className="nav-button">
-            Previous
+            Previous Project
           </Link>
         )}
         <Link to={homePath} className="nav-button">
@@ -117,7 +122,7 @@ const ProjectTemplate = ({
         </Link>
         {nextProjectPath && (
           <Link to={nextProjectPath} className="nav-button">
-            Next
+            Next Project
           </Link>
         )}
       </div>

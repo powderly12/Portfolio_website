@@ -64,7 +64,9 @@ function Home() {
       {/* Roots Section */}
       <section className="roots-section">
         <h2>About Me</h2>
-        <p>I design solutions that bring people's feet back on the ground.</p>
+        <p>Hello my name is Conor Powderly, I am 23 years old and I am currently working towards my masters in Computer and Electronic Engineering at Trinity College Dublin, <br/> 
+        I design solutions that bring people's feet back on the ground. <br/>
+        </p>
 
         <div className="about-container">
   <button className="knowledge-button" onClick={() => setShowKnowledge(!showKnowledge)}>
