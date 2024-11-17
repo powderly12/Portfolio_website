@@ -286,7 +286,7 @@
 /* Image inside the panel */
 .panel-image {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 10%;
   width: 80%;
   height: 80%;
