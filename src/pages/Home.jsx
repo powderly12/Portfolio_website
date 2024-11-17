@@ -24,7 +24,7 @@ function Home() {
           </Link>
           <Link to="/project2" className="project-panel">
             <span>Non-Invasive Glucose Monitoring</span>
-            <img src={`${import.meta.env.BASE}assets/project2.png`} alt="Project 2" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project2.png`} alt="Project 2" className="panel-image" />
           </Link>
           <Link to="/project3" className="project-panel">
             <span>COVID 19 Meeting Pod</span>
@@ -32,19 +32,19 @@ function Home() {
           </Link>
           <Link to="/project4" className="project-panel">
             <span> AI Engine Animations</span>
-            <img src={`${import.meta.env.BASE}assets/project4.png`} alt="Project 4" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project4.png`} alt="Project 4" className="panel-image" />
           </Link>
           <Link to="/project5" className="project-panel">
             <span>Drone Light Painter</span>
-            <img src='assets/project5.png' alt="Project 5" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project5.png`} alt="Project 5" className="panel-image" />
           </Link>
           <Link to="/project6" className="project-panel">
             <span>Sustainable Navigation App</span>
-            <img src='assets/project6.png' alt="Project 6" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project6.png`} alt="Project 6" className="panel-image" />
           </Link>
         </div>
         
-        <img src={`${import.meta.env.BASE}assets/cow.png"`} alt="Decorative Overlay" className="meadow-overlay" />
+        <img src={`${import.meta.env.BASE_URL}assets/cow.png`} alt="Decorative Overlay" className="meadow-overlay" />
       </section>
 
       {/* Roots Section */}
