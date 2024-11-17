@@ -8,8 +8,8 @@ function Project5() {
       description="Below you can see the current working prototype for a passion project I am currently working on of the GUI and the path the drone traced out. "
       layout="two-images" // Choose appropriate layout
       mediaContent={[
-        { type: 'image', src: 'src/assets/imgs/test1.png', alt: 'Project Image 1' },
-        { type: 'image', src: 'src/assets/imgs/test2.jpg', alt: 'Project Image 2' }
+        { type: 'image', src: '/Portfolio_website/assets/imgs/test1.png', alt: 'Project Image 1' },
+        { type: 'image', src: '/Portfolio_website/assets/imgs/test2.jpg', alt: 'Project Image 2' }
       ]}
       homePath="/"
       prevProjectPath="/project4"

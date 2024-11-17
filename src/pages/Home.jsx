@@ -28,15 +28,15 @@ function Home() {
           </Link>
           <Link to="/project3" className="project-panel">
             <span>COVID 19 Meeting Pod</span>
-            <img src={`${import.meta.env.BASE}assets/project3.png`} alt="Project 3" className="panel-image" />
+            <img src='/Portfolio_website/assets/project3.png' alt="Project 3" className="panel-image" />
           </Link>
           <Link to="/project4" className="project-panel">
             <span> AI Engine Animations</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project4.png`} alt="Project 4" className="panel-image" />
+            <img src='/Portfolio_website/assets/project5.png' alt="Project 4" className="panel-image" />
           </Link>
           <Link to="/project5" className="project-panel">
             <span>Drone Light Painter</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project5.png`} alt="Project 5" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project4.png`} alt="Project 5" className="panel-image" />
           </Link>
           <Link to="/project6" className="project-panel">
             <span>Sustainable Navigation App</span>

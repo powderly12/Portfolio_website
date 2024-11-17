@@ -13,7 +13,7 @@ function Project2() {
 
 layout="single-image" // Choose appropriate layout
       mediaContent={[
-        { type: 'image', src: 'src/assets/project2_2.png', alt: 'Glucose Monitor' },
+        { type: 'image', src: '/Portfolio_website/assets/project2_2.png', alt: 'Glucose Monitor' },
       ]}
 homePath="/"
 prevProjectPath="/project1"

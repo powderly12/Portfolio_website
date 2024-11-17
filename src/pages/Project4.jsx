@@ -11,7 +11,7 @@ Above you can see an example of the end animations looked like for basic matrix 
   
       layout="image-video" // Choose appropriate layout
       mediaContent={[
-        { type: 'image', src: 'src/assets/MatrixMult-gif.gif', alt: 'Project Image' },
+        { type: 'image', src: '/Portfolio_website/assets/matrixMult-gif.gif', alt: 'Project Image' },
         { type: 'video', src: 'https://www.youtube.com/watch?v=QKZz4HdOn7E&t=2s' }
       ]}
   

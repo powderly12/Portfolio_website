@@ -8,8 +8,8 @@ function Project1() {
       approach="One of my tasks in this project was building a prototype to showcase this idea. The prototype was a wooden box with some electronic circuits to detect the light refraction angles for sorting materials."
       layout="two-images" // Choose appropriate layout
       mediaContent={[
-        { type: 'image', src: 'src/assets/project1_2.png', alt: 'Trash Bin Prototype' },
-        { type: 'image', src: 'src/assets/project1_2.png', alt: 'Glass Sorting Mechanism' },
+        { type: 'image', src: '/Portfolio_website/assets/project1_2.png', alt: 'Trash Bin Prototype' },
+        { type: 'image', src: '/Portfolio_website/assets/project1_2.png', alt: 'Glass Sorting Mechanism' },
       ]}
       homePath="/"
       prevProjectPath="/project0"

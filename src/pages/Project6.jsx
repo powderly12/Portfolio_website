@@ -15,7 +15,7 @@ Now after my time studying engineering, I have those skills, and I am working to
       
       layout="single-image" // Choose appropriate layout
       mediaContent={[
-        { type: 'image', src: 'src/assets/Project6.png', alt: 'Wayfinding app Logo' },
+        { type: 'image', src: '/Portfolio_website/assets/project6.png', alt: 'Wayfinding app Logo' },
       ]}
       homePath="/"
       prevProjectPath="/project5"
