@@ -41,7 +41,7 @@
     aspect-ratio: 16 / 9; /* Enforces a consistent aspect ratio for all items */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}x
+}
 .project-media-item:hover {
     transform: scale(1.05);
     opacity: 0.9;

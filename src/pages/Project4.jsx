@@ -1,19 +1,18 @@
 import ProjectTemplate from './ProjectTemplate';
 
-function Project3() {
+function Project4() {
   return (
     <ProjectTemplate
       title="HiPEAC Workshop Animations"
-      description="After my third year in college, I decided I wanted to get some experience, so I took an internship with AMD a multination semiconductor company with the european head quarters in Dublin. I got work on a bunch of projects while working there but my favourite project was helping to deliver a workshop at the HiPEAC hardware conference in Toulouse, France."
-      approach="For this project I was in charge of creating a way to explain how AMD's AI engines preform matrix multiplications, an operation essential A.I. models. A lot of user testing was involved in this process and in the animations were the best way to get this process across.  It was a great way to explain something complex, sometimes words just get in the way!"
-      learnings="Above you can see an example of the end animations looked like for basic matrix multiplication and an interview I did for the HiPEAC organisers. For this whole experience I really gained appreciation for how important communication is in design. This project inspired me to become a teaching assistant at Trinity College to understand what information needs to be shared to obtain understanding of technical ideas."
-  
-      layout="image-video" // Choose appropriate layout
+      introduction="After my third year in college, I sought practical experience and joined AMD, a multinational semiconductor company with its European headquarters in Dublin."
+      description="During my internship, I worked on several exciting projects, but my favorite was contributing to a workshop for the HiPEAC hardware conference in Toulouse, France. This project combined technical problem-solving with creative design, allowing me to explore how to communicate complex ideas effectively."
+      approach="The core challenge of this project was explaining how AMD's AI engines perform matrix multiplications, a foundational operation in AI models. To tackle this, I led the design of animations that would simplify the concept for a diverse audience. The process involved extensive user testing to identify the most effective way to communicate the topic. Early iterations included diagrams and written explanations, but I found that animations provided the clarity and accessibility we needed. By visually representing complex processes, the animations removed potential barriers created by technical jargon and made the concept intuitive and engaging."
+      learnings="This project deepened my understanding of how communication and design go hand in hand. Creating these animations required me to think critically about the user's perspective, ensuring that even complex ideas could be easily understood. Above, you can see examples of the animations I created for basic matrix multiplication, as well as an interview I did for the HiPEAC organizers. Inspired by this experience, I became a teaching assistant at Trinity College, where I honed my ability to present technical concepts in a clear and impactful way. This project reinforced my belief in the importance of thoughtful design for effective communication."
+      layout="image-video"
       mediaContent={[
-        { type: 'image', src: '/Portfolio_website/assets/matrixMult-gif.gif', alt: 'Project Image' },
+        { type: 'image', src: '/Portfolio_website/assets/matrixMult-gif.gif', alt: 'Matrix Multiplication Animation' },
         { type: 'video', src: 'https://www.youtube.com/watch?v=QKZz4HdOn7E&t=2s' }
       ]}
-  
       homePath="/"
       prevProjectPath="/project3"
       nextProjectPath="/project5"
@@ -21,4 +20,4 @@ function Project3() {
   );
 }
 
-export default Project3;
+export default Project4;
