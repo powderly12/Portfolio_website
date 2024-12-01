@@ -15,8 +15,10 @@ function Home() {
     <div className="home-container">
       {/* Sky Section */}
       <section className="sky-section">
-        <h1>Welcome to My Design Portfolio</h1>
-        <p>This is where creativity meets functionality. <br/> Explore my projects below! Click the cow for a surpise! </p>
+        <h1> Welcome to my Design Portfolio </h1>
+        <p>This is where creativity meets functionality.<br/>
+        Explore my projects below! Click the cow for a surprise!
+        </p>
         <img src={`${import.meta.env.BASE_URL}assets/sun.png`} alt="Sun Overlay" className="sun-img" />
         <img src={`${import.meta.env.BASE_URL}assets/trees.png`} alt="Tree Overlay" className="tree-overlay" />
       </section>
@@ -40,7 +42,7 @@ function Home() {
             <img src="/Portfolio_website/assets/project3.png" alt="Project 3" className="panel-image" />
           </Link>
           <Link to="/project4" className="project-panel">
-            <span>AI Engine Animations</span>
+            <span>AI Engine Visualisations</span>
             <img src="/Portfolio_website/assets/project5.png" alt="Project 4" className="panel-image" />
           </Link>
           <Link to="/project5" className="project-panel">
@@ -65,13 +67,13 @@ function Home() {
       <section className="roots-section">
         <h2>About Me</h2>
         <p>
-          Hello, my name is Conor Powderly. I am 24 years old and I am currently working towards my master’s in Computer and Electronic Engineering at Trinity College Dublin. <br />
-          I aim to design solutions that bring people's feet back on the ground. <br />
+          Hello, my name is Conor Powderly. I am 24 years old and I am currently working towards my master's in Computer and Electronic Engineering at Trinity College Dublin. <br />
+          I want to design practical solutions that enable people to enjoy life while facing their issues.<br />
         </p>
 
         <div className="about-container">
           <button className="knowledge-button" onClick={() => setShowKnowledge(!showKnowledge)}>
-            Areas of Knowledge
+            Areas of Interest
           </button>
           <img src="/Portfolio_website/assets/headshot.png" alt="About Me Image" className="about-image" />
           <button className="connect-button" onClick={() => setShowDetails(!showDetails)}>
@@ -82,7 +84,7 @@ function Home() {
         {/* Toggle Areas of Knowledge Section */}
         {showKnowledge && (
           <div className="knowledge-section">
-            <h2>Areas of Knowledge</h2>
+            <h2>Areas of Interest</h2>
             <ul className="two-column-list">
               <li>Computer and Electronic Engineering (MAI)</li>
               <li>Machine Learning and AI</li>
@@ -99,7 +101,7 @@ function Home() {
               <li>Rugby</li>
               <li>Costume Design</li>
             </ul>
-            <p>… this list is always growing!</p>
+            <p>This list is always growing!</p>
           </div>
         )}
 
@@ -108,7 +110,7 @@ function Home() {
             <h2>Connect With Me</h2>
             <p>
               Feel free to connect with me <a href="https://www.linkedin.com/in/conor-powderly-73316b213/" target="_blank" className="Link">on LinkedIn</a> and reach out. <br />
-              You can also check out the source code for this website <a href="https://github.com/powderly12/Portfolio_website" target="_blank" className="Link">on my GitHub</a> – making it was a lot of fun, and I might have a few other projects on there!
+              You can also check out the source code for this website <a href="https://github.com/powderly12/Portfolio_website" target="_blank" className="Link">on my GitHub</a> - creating it was a lot of fun, and I might have a few other projects on there!
             </p>
           </div>
         )}
@@ -116,7 +118,6 @@ function Home() {
         <h2>Thank you!</h2>
         <p>
           It means a lot to me that you are taking an interest in my work! <br />
-          Most of the graphics and images for this website come from my artwork. If you want to see more, click on the cow above!
         </p>
       </section>
     </div>

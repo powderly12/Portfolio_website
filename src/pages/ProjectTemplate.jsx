@@ -23,7 +23,7 @@ const ProjectTemplate = ({
   return (
     <div className="project-container">
       <h1 className="project-title">{title}</h1>
-      <p className="project-intro">{introduction} <br/> {description}</p>
+      <p className="project-intro">{introduction} <br/> <br/>{description}</p>
 
       {/* Media Section */}
       <div className="project-media">
@@ -51,7 +51,7 @@ const ProjectTemplate = ({
           </div>
         )}
 
-        {layout === 'three-images' && mediaContent.length === 3 && (
+        {(layout === 'three-images'|| layout === 'four-images') && (mediaContent.length === 3 || mediaContent.length) && (
           <>
             <div className="project-images">
               {mediaContent.slice(0, 2).map((media, index) => (
@@ -107,6 +107,21 @@ const ProjectTemplate = ({
           className="project-image"
         />
       </div>)
+      }
+
+      {layout === 'four-images' && mediaContent.length === 4 && (
+        <div className="project-images">
+        {mediaContent.slice(2, 4).map((media, index) => (
+          <div key={index} className="project-media-item">
+            <img
+              src={media.src}
+              alt={media.alt || `Project Image ${index + 1}`}
+              className="project-image"
+            />
+          </div>
+        ))}
+      </div>)
+
       }
           
 
