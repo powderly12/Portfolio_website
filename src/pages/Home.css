@@ -262,11 +262,11 @@
 }
 
 .left-arrow {
-  left: 30%;
+  left: 20%;
 }
 
 .right-arrow {
-  right: 30%;
+  right: 20%;
 }
 
 .project-panels {
@@ -275,7 +275,7 @@
   overflow-x: auto; /* enables horizontal scroll */
   scroll-snap-type: x mandatory; /* snap to panels */
   padding: 2rem;
-  max-width: 35%; /* let it stretch */
+  max-width: 50%; /* let it stretch */
   margin: 0 auto;
   -ms-overflow-style: none;  /* IE + Edge (old) */
   scrollbar-width: none;     /* Firefox */
@@ -288,7 +288,7 @@
 
 /* Each panel */
 .project-panel {
-  flex: 0 0 200px; /* fixed width for each card */
+  flex: 0 0 30%; /* fixed width for each card */
   aspect-ratio: 1; /* keeps square */
   scroll-snap-align: start; /* snapping */
   position: relative;
@@ -299,6 +299,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  margin-top: -50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   text-decoration: none;

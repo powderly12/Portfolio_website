@@ -20,27 +20,39 @@ function Home() {
       });
     }
   }
+  
   useEffect(() => {
-    const container = panelsRef.current;
-    const panels = container.querySelectorAll('.project-panel');
+  const container = panelsRef.current;
+  if (!container) return;
+  const panels = container.querySelectorAll('.project-panel');
 
-    function updateCurve() {
-      const center = container.scrollLeft + container.clientWidth / 2;
-      panels.forEach(panel => {
-        const panelCenter = panel.offsetLeft + panel.offsetWidth / 2;
-        const distance = (panelCenter - center) / container.clientWidth; 
-        // distance ~ -0.5 (far left) to +0.5 (far right)
+  function updateCurve() {
+    const containerRect = container.getBoundingClientRect();
+    const center = containerRect.left + containerRect.width / 2;
 
-        const curveAmount = Math.abs(distance) * 40; // pixels to move up/down
-        const scale = 1 - Math.abs(distance) * 0.2; // shrink slightly on edges
+    panels.forEach(panel => {
+      const panelRect = panel.getBoundingClientRect();
+      const panelCenter = panelRect.left + panelRect.width / 2;
+      const distance = (panelCenter - center) / containerRect.width;
 
-        panel.style.transform = `translateY(${curveAmount}px) scale(${scale})`;
-      });
-    }
+      // Flip the Y-curve so center is lowest
+      const curveAmount = (1 - Math.abs(distance)) * 40; // max dip at center
+      const scale = 0.4 + (1 - Math.abs(distance)) * 0.5; // bigger at center, shrink at edges
 
-    updateCurve(); // run once on mount
-    container.addEventListener('scroll', updateCurve);
-    return () => container.removeEventListener('scroll', updateCurve);
+      panel.style.transform = `translateY(${curveAmount}px) scale(${scale})`;
+      panel.style.transformOrigin = 'center center';
+      panel.style.zIndex = Math.round(100 - Math.abs(distance) * 100); // bring center panel to front
+    });
+  }
+
+  updateCurve(); // run once on mount
+  container.addEventListener('scroll', updateCurve);
+  window.addEventListener('resize', updateCurve);
+
+  return () => {
+    container.removeEventListener('scroll', updateCurve);
+    window.removeEventListener('resize', updateCurve);
+  };
   }, []);
 
 
