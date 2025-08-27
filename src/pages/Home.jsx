@@ -114,7 +114,7 @@ function Home() {
 
         <div className="cow-button-wrapper">
           <Link to="/art-and-photography" className="cow-container">
-            <img src="/Portfolio_website/assets/cow.png" alt="Cow" className="meadow-overlay-cow" style={{ pointerEvents: 'auto' }} />
+            <img src={`${import.meta.env.BASE_URL}assets/cow.png`} alt="Cow" className="meadow-overlay-cow" style={{ pointerEvents: 'auto' }} />
             <div className="cow-hover-message">Click to see Art & Photography!</div>
           </Link>
         </div>
