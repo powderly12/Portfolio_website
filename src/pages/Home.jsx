@@ -89,8 +89,10 @@ function Home() {
           </Link>
           <Link to="/project2" className="project-panel">
             <span>Non-Invasive Glucose Monitoring</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project2.png`} alt="Project 2" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/Project2.png`} alt="Project 2" className="panel-image" />
           </Link>
+
+          
           <Link to="/project3" className="project-panel">
             <span>COVID-19 Meeting Pod</span>
             <img src={`${import.meta.env.BASE_URL}assets/project3.png`} alt="Project 3" className="panel-image" />
