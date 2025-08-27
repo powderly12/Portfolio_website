@@ -1,10 +1,60 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+
+  
 
 function Home() {
   const [showKnowledge, setShowKnowledge] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+
+  const panelsRef = useRef(null);
+
+
+  function scroll(direction) {
+    if (panelsRef.current) {
+      const scrollAmount = 250; // width to move each time
+      panelsRef.current.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
+  useEffect(() => {
+  const container = panelsRef.current;
+  if (!container) return;
+  const panels = container.querySelectorAll('.project-panel');
+
+  function updateCurve() {
+    const containerRect = container.getBoundingClientRect();
+    const center = containerRect.left + containerRect.width / 2;
+
+    panels.forEach(panel => {
+      const panelRect = panel.getBoundingClientRect();
+      const panelCenter = panelRect.left + panelRect.width / 2;
+      const distance = (panelCenter - center) / containerRect.width;
+
+      // Flip the Y-curve so center is lowest
+      const curveAmount = (1 - Math.abs(distance)) * 40; // max dip at center
+      const scale = 0.4 + (1 - Math.abs(distance)) * 0.5; // bigger at center, shrink at edges
+
+      panel.style.transform = `translateY(${curveAmount}px) scale(${scale})`;
+      panel.style.transformOrigin = 'center center';
+      panel.style.zIndex = Math.round(100 - Math.abs(distance) * 100); // bring center panel to front
+    });
+  }
+
+  updateCurve(); // run once on mount
+  container.addEventListener('scroll', updateCurve);
+  window.addEventListener('resize', updateCurve);
+
+  return () => {
+    container.removeEventListener('scroll', updateCurve);
+    window.removeEventListener('resize', updateCurve);
+  };
+  }, []);
+
 
   useEffect(() => {
     // Scroll to the top when the component is loaded
@@ -17,7 +67,8 @@ function Home() {
       <section className="sky-section">
         <h1> Welcome to my Design Portfolio </h1>
         <p>This is where creativity meets functionality.<br/>
-        Explore my projects below! Click the cow for a surprise!
+        Explore my projects below! <br/> 
+        Click the cow for more of my art and photography!
         </p>
         <img src={`${import.meta.env.BASE_URL}assets/sun.png`} alt="Sun Overlay" className="sun-img" />
         <img src={`${import.meta.env.BASE_URL}assets/trees.png`} alt="Tree Overlay" className="tree-overlay" />
@@ -28,7 +79,10 @@ function Home() {
         <img src={`${import.meta.env.BASE_URL}assets/boys.png`} alt="Decorative Overlay" className="meadow-overlay-boys" />
 
         {/* Project Panels */}
-        <div className="project-panels">
+        <div className="carousel-wrapper">
+        <button className="arrow left-arrow" onClick={() => scroll(-1)}>‹</button>
+        
+        <div className="project-panels" ref={panelsRef}>
           <Link to="/project1" className="project-panel">
             <span>Self-Sorting Trash Bin</span>
             <img src={`${import.meta.env.BASE_URL}assets/project1.png`} alt="Project 1" className="panel-image" />
@@ -55,6 +109,9 @@ function Home() {
           </Link>
         </div>
 
+        <button className="arrow right-arrow" onClick={() => scroll(1)}>›</button>
+        </div>
+
         <div className="cow-button-wrapper">
           <Link to="/art-and-photography" className="cow-container">
             <img src="/Portfolio_website/assets/cow.png" alt="Cow" className="meadow-overlay-cow" style={{ pointerEvents: 'auto' }} />
@@ -67,7 +124,7 @@ function Home() {
       <section className="roots-section">
         <h2>About Me</h2>
         <p>
-          Hello, my name is Conor Powderly. I am 24 years old and I am currently working towards my master's in Computer and Electronic Engineering at Trinity College Dublin. <br />
+          Hello, my name is Conor Powderly. I am 24 years old and I am currently working towards my Master's in Computer and Electronic Engineering at Trinity College Dublin. <br />
           I want to design practical solutions that enable people to enjoy life while facing their issues.<br />
         </p>
 

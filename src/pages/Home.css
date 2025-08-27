@@ -166,10 +166,11 @@
   align-items: center;
   margin-bottom: 2rem; /* Add spacing if needed */
   position: absolute;
-  right: 50px; /* Adjust this to position image from the right edge */
-  top: 80px;
+  right: 5%; /* Adjust this to position image from the right edge */
+  top: 30%;
   transform: translateY(-50%); /* Center vertically */
-  max-width: 150px; /* Adjust the size as needed */
+  max-width: 12%; /* Adjust the size as needed */
+  
   height: auto;
   z-index: 2;
   pointer-events: none;
@@ -222,68 +223,102 @@
     position: absolute;
     bottom: 0; /* Pins the image to the bottom */
     left: 0; /* Pins the image to the left */
-    width: 15vw; /* Scales dynamically based on viewport width */
-    max-width: 300px; /* Prevents the image from getting too large */
-    min-width: 260px; /* Ensures the image doesn't shrink too much */
+    max-height: 80%; /* Prevents the image from getting too large */
+    min-height: 70%; /* Ensures the image doesn't shrink too much */
     height: auto; /* Maintains aspect ratio */
     z-index: 2;
     pointer-events: none;
 }
 
- 
-
-/* Container for panels in a 3x2 grid */
-.project-panels {
-  display: grid;
-  grid-template-columns: repeat(3, 35%); /* Three columns */
-  grid-template-rows: auto;
-  column-gap: 4rem; /* Adds space between columns only */
-  row-gap: 1rem; /* Optional: Adjusts spacing between rows */
-  max-width: 400px; /* Adjust as needed */
-  min-width: 300;
-  margin: 0 auto;
-  padding: 2rem;
-  z-index: 4;
-  justify-content: center;
-  align-items: center;
-  width: auto; /* Allows the container to expand */
-  height: auto; /* Optional: Let it grow vertically */
-}
 
 
+/* Container for horizontal scrollable carousel */
 
-
-
-/* Project panel style for square shape */
-.project-panel {
+.carousel-wrapper {
   position: relative;
-  overflow: hidden;
-  background-color: #5574179b;
-  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Full width of grid cell */
-  aspect-ratio: 1; /* Makes the panel a square */
+}
+
+.arrow {
+  background: rgba(85, 116, 121, 0.8);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition:  0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(136, 161, 90, 0.9);
+}
+
+.left-arrow {
+  left: 20%;
+}
+
+.right-arrow {
+  right: 20%;
+}
+
+.project-panels {
+  display: flex;
+  gap: 2rem; /* space between items */
+  overflow-x: auto; /* enables horizontal scroll */
+  scroll-snap-type: x mandatory; /* snap to panels */
+  padding: 2rem;
+  max-width: 50%; /* let it stretch */
+  margin: 0 auto;
+  -ms-overflow-style: none;  /* IE + Edge (old) */
+  scrollbar-width: none;     /* Firefox */
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.project-panels::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each panel */
+.project-panel {
+  flex: 0 0 30%; /* fixed width for each card */
+  aspect-ratio: 1; /* keeps square */
+  scroll-snap-align: start; /* snapping */
+  position: relative;
+  overflow: hidden;
+  background-color: #5574179b;
+  color: #eee8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
+  margin-top: -50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   text-decoration: none;
+  
 }
 
-/* Text displayed by default */
+/* Text */
 .project-panel span {
   font-size: 1rem;
   font-weight: bold;
-  position:center;
   z-index: 2;
   transition: opacity 0.3s ease;
-  color: #eee8e8;
   padding: 0.5rem;
-  text-align: center; /* Center text if it wraps */
+  text-align: center;
 }
 
-/* Image inside the panel */
+/* Image inside */
 .panel-image {
   position: absolute;
   top: 10%;
@@ -296,7 +331,7 @@
   z-index: 5;
 }
 
-/* Hover effect to reveal the image */
+/* Hover effects */
 .project-panel:hover .panel-image {
   opacity: 1;
 }
@@ -309,6 +344,9 @@
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+
+
 
   /* Roots Section */
   .roots-section {
