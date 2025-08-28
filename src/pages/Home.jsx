@@ -158,9 +158,7 @@ function Home() {
               <li>Construction</li>
               <li>Animation</li>
               <li>Photoshop</li>
-              <li>Art History</li>
               <li>Rugby</li>
-              <li>Costume Design</li>
             </ul>
             <p>This list is always growing!</p>
           </div>
