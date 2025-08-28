@@ -127,7 +127,7 @@
   height: auto;         /* Maintain aspect ratio */
   width: 150vw;         /* Wider than viewport to guarantee overflow */
   max-width: none;      /* Remove any width restriction */
-  transform: translateY(10px);
+  transform: translateY(1px);
   z-index: 5;
   pointer-events: none;
 }
@@ -253,8 +253,8 @@
   height: 2.5rem;
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0px;
+  transform: translateY(40px);
   z-index: 10;
   transition:  0.3s ease;
 }
@@ -264,11 +264,11 @@
 }
 
 .left-arrow {
-  left: 20%;
+  left: 40%;
 }
 
 .right-arrow {
-  right: 20%;
+  right: 40%;
 }
 
 .project-panels {
@@ -277,13 +277,14 @@
   overflow-x: auto; /* enables horizontal scroll */
   scroll-snap-type: x mandatory; /* snap to panels */
   padding: 2rem;
-  max-width: 50%; /* let it stretch */
+  max-width: 55%; /* let it stretch */
   margin: 0 auto;
   z-index: 3;
   -ms-overflow-style: none;  /* IE + Edge (old) */
   scrollbar-width: none;     /* Firefox */
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  
 }
 
 /* Hide scrollbar for WebKit (Chrome, Safari) */
@@ -299,6 +300,7 @@
   position: relative;
   overflow: hidden;
   background-color: #5574179b;
+  scroll-snap-align: center;
   color: #eee8e8;
   display: flex;
   align-items: center;

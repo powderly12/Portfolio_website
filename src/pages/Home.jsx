@@ -12,14 +12,16 @@ function Home() {
 
 
   function scroll(direction) {
-    if (panelsRef.current) {
-      const scrollAmount = 250; // width to move each time
-      panelsRef.current.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-    }
+  if (panelsRef.current) {
+    const firstPanel = panelsRef.current.querySelector('.project-panel');
+    console.log(firstPanel.offsetWidth);
+    const scrollAmount = firstPanel ? firstPanel.offsetWidth * 1.5 : 250; // fallback to 250 if not found
+    panelsRef.current.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
   }
+}
   
   useEffect(() => {
   const container = panelsRef.current;
@@ -36,7 +38,7 @@ function Home() {
       const distance = (panelCenter - center) / containerRect.width;
 
       // Flip the Y-curve so center is lowest
-      const curveAmount = (1 - Math.abs(distance)) * 40; // max dip at center
+      const curveAmount = (1 - Math.abs(distance)) * 30; // max dip at center
       const scale = 0.4 + (1 - Math.abs(distance)) * 0.5; // bigger at center, shrink at edges
 
       panel.style.transform = `translateY(${curveAmount}px) scale(${scale})`;
