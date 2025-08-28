@@ -109,7 +109,7 @@ function Home() {
           </Link>
           <Link to="/project6" className="project-panel">
             <span>Sustainable Navigation App</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project6_icon.png`} alt="Project 6" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}src/assets/rooty.png`} alt="Project 6" className="panel-image" />
           </Link>
         </div>
 
