@@ -46,15 +46,6 @@ function Project3() {
           <Link to="/">🏠 Home</Link>
           <Link to="/project4">Next Project →</Link>
         </div>
-        <div className="project3-github-link">
-          <a
-            href="https://github.com/yourusername/your-meeting-pod-repo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View this project on GitHub
-          </a>
-        </div>
       </div>
     </div>
   );
