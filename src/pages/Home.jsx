@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { useEffect, useState, useRef } from 'react';
+import rootyImg from '../assets/rooty.png';
 
   
 
@@ -101,15 +102,15 @@ function Home() {
           </Link>
           <Link to="/project4" className="project-panel">
             <span>AI Engine Visualisations</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project4.png`} alt="Project 4" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project5.png`} alt="Project 4" className="panel-image" />
           </Link>
           <Link to="/project5" className="project-panel">
             <span>Drone Light Painter</span>
-            <img src={`${import.meta.env.BASE_URL}assets/project5.png`} alt="Project 5" className="panel-image" />
+            <img src={`${import.meta.env.BASE_URL}assets/project4.png`} alt="Project 5" className="panel-image" />
           </Link>
           <Link to="/project6" className="project-panel">
             <span>Sustainable Navigation App</span>
-            <img src={`${import.meta.env.BASE_URL}assets/rooty.png`} alt="Project 6" className="panel-image" />
+            <img src={rootyImg} alt="Project 6" className="panel-image" />
           </Link>
         </div>
 
