@@ -1,23 +1,62 @@
-import ProjectTemplate from './ProjectTemplate';
+import './Project3.css';
+import bgImg from '../assets/Project3_4.png'; // Replace with your actual image
+import podImg from '../assets/Project3_3.png';
+import podInterior from '../assets/Project3_5.png'; // Optional: another image
+import { Link } from 'react-router-dom';
 
 function Project3() {
   return (
-    <ProjectTemplate 
-      title="COVID-19 Meeting Pod"
-      description="The COVID-19 pandemic brought with it unprecedented challenges, including strict restrictions on socialization in Ireland. These measures left many people separated from their loved ones, creating a profound sense of isolation. In response to this, our team set out to design a solution that would safely facilitate face-to-face interactions while adhering to public health guidelines."
-      approach="The design process for the COVID-19 Meeting Pod involved rapid prototyping, problem-solving, and creative iteration. As a member of the team, my role was to quickly sketch design ideas to communicate concepts and troubleshoot challenges. One of my favorite designs was a pod that connected to the door frame of a person’s home and could expand outward in good weather or inward for indoor use. This design drew inspiration from Japanese origami, allowing the pod to fold and move easily. The lightweight and flexible structure made it adaptable to various spaces and conditions, which was critical during a time of supply chain uncertainties."
-      learnings="This project was a significant learning experience for me. Keeping a detailed design journal helped me refine my ideas and track how they evolved throughout the project. I learned to design, adapt, and prototype quickly to address unforeseen constraints, such as limited material availability. More importantly, this project reminded me of the emotional impact design can have—bringing people together during such a lonely and challenging time was incredibly rewarding. The experience reinforced my belief in the power of design to address both practical and emotional needs."
-      layout="four-images"
-      mediaContent={[
-        { type: 'image', src: '/Portfolio_website/assets/project3_2.png', alt: 'Conceptual Design of COVID-19 Meeting Pod' },
-        { type: 'image', src: '/Portfolio_website/assets/project3_3.png', alt: 'Prototype of COVID-19 Meeting Pod' },
-        { type: 'image', src: '/Portfolio_website/assets/project3_4.png', alt: 'COVID-19 Meeting Pod in Use' },
-        { type: 'image', src: '/Portfolio_website/assets/project3_5.png', alt: 'COVID-19 Meeting Pod in Use' }
-      ]}
-      homePath="/"
-      prevProjectPath="/project2"
-      nextProjectPath="/project4"
-    />
+    <div className="project3-background"
+      style={{
+                      backgroundImage: `url(${bgImg})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+    >
+      <div className="project3-container">
+        <h1 className="project3-title">COVID-19 Meeting Pod</h1>
+        <p className="project3-intro">
+          During the COVID-19 pandemic, safe in-person meetings became a major challenge. As part of a university design project, I worked with a team to develop a modular, ventilated meeting pod that allowed people to collaborate face-to-face while minimizing health risks.
+        </p>
+        <div className="project3-images">
+          <img src={podImg} alt="COVID-19 Meeting Pod Exterior" />
+          <img src={podInterior} alt="COVID-19 Meeting Pod Interior" />
+        </div>
+        <section className="project3-section">
+          <h2>Description</h2>
+          <p>
+            The meeting pod was designed to be easily assembled and disassembled, making it suitable for offices, schools, and public spaces. We focused on airflow, using HEPA filtration and a negative pressure system to reduce the risk of airborne transmission. The pod also featured transparent panels for visibility and communication, while maintaining a physical barrier.
+          </p>
+        </section>
+        <section className="project3-section">
+          <h2>Approach</h2>
+          <p>
+            Our team used rapid prototyping and iterative testing to refine the pod’s structure and ventilation. We consulted with health experts and incorporated feedback from potential users to ensure the design was both safe and practical. The final prototype balanced safety, comfort, and ease of use, and could be adapted for different environments.
+          </p>
+        </section>
+        <section className="project3-section">
+          <h2>Learnings</h2>
+          <p>
+            This project taught me the importance of interdisciplinary collaboration and user-centered design, especially when addressing urgent real-world problems. I gained experience in prototyping, teamwork, and communicating with stakeholders from diverse backgrounds.
+          </p>
+        </section>
+        <div className="project3-nav">
+          <Link to="/project2">← Previous Project</Link>
+          <Link to="/">🏠 Home</Link>
+          <Link to="/project4">Next Project →</Link>
+        </div>
+        <div className="project3-github-link">
+          <a
+            href="https://github.com/yourusername/your-meeting-pod-repo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View this project on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
