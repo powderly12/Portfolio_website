@@ -1,22 +1,53 @@
-import ProjectTemplate from './ProjectTemplate';
+import './Project1.css';
+import img1 from '../assets/project1_3.jpg';
+import img2 from '../assets/project1_2.png';
+import bgImg from '../assets/project1_1.jpg';
+import { Link } from 'react-router-dom';
 
 function Project1() {
   return (
-    <ProjectTemplate
-      title="Self-Sorting Trash Bin"
-      introduction="Designing solutions to real-world problems has always been my way of making a positive impact, especially in areas that align with sustainability."
-      description="The Self-Sorting Trash Bin was a pivotal project in my journey as a designer. Developed for the BT Young Scientist competition, Ireland’s national science fair, this project was born from a desire to make sustainable choices effortless for everyone. Working as part of a team of three, we set out to design a bin that could automatically sort its own trash. This ambitious goal required a strong focus on the design process to bring our idea to life."
-      approach="Our design process involved extensive brainstorming, prototyping, and iterating. We started by breaking the problem into smaller components: identifying sorting mechanisms, selecting materials, and designing circuits. My primary responsibility was building a working prototype to demonstrate the feasibility of our concept. Using a wooden frame and a circuit capable of detecting light refraction angles, we created a sorting mechanism for glass bottles. Each iteration of the prototype brought us closer to understanding how the design could be improved."
-      learnings="This project was a transformative experience for me. Collaborating with my team taught me how to refine ideas through iteration, overcome technical challenges, and translate concepts into functional designs. Participating in the competition also gave me exposure to a diverse range of ideas and creative minds, as well as the opportunity to meet Irish celebrities and politicians. Inspired by this experience, I pursued engineering at Trinity College Dublin to deepen my technical skills and continue my journey of turning impactful ideas into reality."
-      layout="three-images" 
-      mediaContent={[
-        { type: 'image', src: '/Portfolio_website/assets/project1_3.png', alt: 'Prototype of the Self-Sorting Trash Bin' },
-        { type: 'image', src: '/Portfolio_website/assets/project1_2.png', alt: 'Close-up of Glass Sorting Mechanism' },
-        { type: 'image', src: '/Portfolio_website/assets/project1_4.png', alt: 'Presentation at the Science Fair' },
-      ]}
-      homePath="/"
-      nextProjectPath="/project2"
-    />
+    <div className="project1-background"
+    style={{
+                              backgroundImage: `url(${bgImg})`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                              backgroundRepeat: 'no-repeat'
+                            }}
+    
+    >
+      <div className="project1-container">
+        <h1 className="project1-title">Self-Sorting Trash Bin</h1>
+        <p className="project1-intro">
+          My journey into engineering and design began with a passion for sustainability and a desire to solve real-world problems. For the BT Young Scientist competition, I worked with a team to create a self-sorting trash bin that could automatically separate recyclables, making sustainable choices easier for everyone.
+        </p>
+        <div className="project1-images">
+          <img src={img1} alt="Prototype of the Self-Sorting Trash Bin" />
+          <img src={img2} alt="Presentation at the Science Fair" />
+        </div>
+        <section className="project1-section">
+          <h2>Description</h2>
+          <p>
+            The Self-Sorting Trash Bin was designed to identify and sort different types of waste using sensors and a custom-built mechanism. Our goal was to reduce contamination in recycling streams and encourage more people to recycle correctly. The project required us to research sorting technologies, design circuits, and build a working prototype from scratch.
+          </p>
+        </section>
+        <section className="project1-section">
+          <h2>Approach</h2>
+          <p>
+            We started by brainstorming and sketching ideas, then moved on to prototyping with materials like wood and acrylic. I focused on developing the sensor system, which used light refraction to detect glass bottles. Through multiple iterations, we refined the sorting mechanism and improved its reliability. Presenting our project at the national science fair was a highlight, as we received valuable feedback from judges and visitors.
+          </p>
+        </section>
+        <section className="project1-section">
+          <h2>Learnings</h2>
+          <p>
+            This project taught me the value of teamwork, perseverance, and iterative design. I learned how to turn an idea into a functional prototype, troubleshoot technical challenges, and communicate our vision to a broad audience. The experience inspired me to pursue engineering at Trinity College Dublin and continues to influence my approach to problem-solving today.
+          </p>
+        </section>
+        <div className="project1-nav">
+          <Link to="/">🏠 Home</Link>
+          <Link to="/project2">Next Project →</Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
