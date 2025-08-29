@@ -1,0 +1,202 @@
+.project4-background {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-color: #f0f4f8;
+}
+
+.project4-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background: #f8fafb;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.project4-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #3a4a3f;
+  text-align: center;
+}
+
+.project4-intro {
+  font-size: 1.15rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.project4-media {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.project4-media img,
+.project4-video-wrapper {
+  width: 45%;
+  min-width: 280px;
+  max-width: 400px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #eaeaea;
+  object-fit: cover;
+  margin-bottom: 0;
+  display: block;
+}
+
+.project4-video-wrapper {
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project4-video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .project4-media {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .project4-media img,
+  .project4-video-wrapper {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    margin-bottom: 1.2rem;
+    aspect-ratio: 16/9;
+  }
+}
+.project4-video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.project4-section {
+  margin-bottom: 1.2rem;
+}
+
+.project4-section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6a7c6a;
+  margin-bottom: 0.4rem;
+}
+
+.project4-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.project4-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project4-nav a {
+  color: #4a7c59;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  background: #e6f2e6;
+  transition: background 0.2s;
+}
+
+.project4-nav a:hover {
+  background: #cde7cd;
+}
+
+.project4-github-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.project4-github-link a {
+  color: #24292f;
+  background: #f5f5f5;
+  border: 1px solid #d1d5da;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, border 0.2s;
+  display: inline-block;
+}
+
+.project4-github-link a:hover {
+  background: #e1e4e8;
+  border-color: #0366d6;
+  color: #0366d6;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .project4-container {
+    padding: 1.2rem 0.5rem;
+    margin: 1.5rem 0.2rem;
+  }
+  .project4-title {
+    font-size: 1.6rem;
+  }
+  .project4-intro {
+    font-size: 1rem;
+  }
+  .project4-media {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .project4-media img,
+  .project4-video-wrapper {
+    width: 90%;
+    max-width: 400px;
+    min-width: 0;
+    margin-bottom: 1.2rem;
+  }
+  .project4-section h2 {
+    font-size: 1rem;
+  }
+  .project4-section p {
+    font-size: 0.97rem;
+  }
+  .project4-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+  .project4-nav a {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.7rem 0.5rem;
+  }
+  .project4-github-link {
+    margin-top: 1.2rem;
+  }
+}
