@@ -129,8 +129,12 @@ function Home() {
       <section className="roots-section">
         <h2>About Me</h2>
         <p>
-          Hello, my name is Conor Powderly. I am 24 years old and I am currently working towards my Master's in Computer and Electronic Engineering at Trinity College Dublin. <br />
-          I want to design practical solutions that enable people to enjoy life while facing their issues.<br />
+          Hello, my name is Conor Powderly. I am 25 years old with an MAI in Computer and Electronic engineer. 
+          
+          I am currently working towards my masters in Prosperity, Innovation and Entrepreneurship at UCL thanks to the George Moore Scholarship. <br />
+          
+          
+          I want to design practical solutions that enable people to enjoy life.<br />
         </p>
 
         <div className="about-container">
